@@ -10,7 +10,7 @@ def convert_image():
 
     if jpg_path:
         # Load the JPG image
-        image_path = os.path.join("G:\Projects\Python_development\Img", "men.jpg")
+        image_path = os.path.join("Image path", "men.jpg")
         image = Image.open(image_path)
         
         # Convert the image to PNG format
