@@ -8,11 +8,23 @@ from tkinter import messagebox
 def calculate_bmi():
     weight = float(weight_entry.get()) # Get the weight from the weight_entry field and convert it to float
     height = float(height_entry.get()) # Get the height from the height_entry field and convert it to float
+    height = height / 100 # Convert the height from centimeters to meters
     bmi = weight / (height * height)  # Calculate the BMI
+    
+    if bmi > 0:
+        if bmi <= 16:
+            print("you are severely underweight")
+        elif bmi <= 18.5:
+            print("you are underweight")
+        elif bmi <= 25:
+            print("you are Healthy")
+        elif bmi <= 30:
+            print("you are overweight")
+        else:
+            print("you are severely overweight")
 
-# Display the BMI in a message box
-
-    messagebox.showinfo("BMI Result", f"Your BMI is: {bmi:.2f}")
+    # Display the BMI in a message box
+    messagebox.showinfo("BMI Result", f"Your BMI is: {bmi:.3f}")
 
 # Create the GUI window
 window = tk.Tk()
